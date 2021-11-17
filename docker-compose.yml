@@ -134,6 +134,15 @@ services:
     volumes: *superset-volumes
 
 
+  zeppelin:
+    image: zeppelin-spark
+    build:
+      context: zeppelin/
+      dockerfile: Dockerfile
+    container_name: zeppelin
+    ports:
+      - "8083:8080"
+
 volumes:
   superset_home:
     external: false
